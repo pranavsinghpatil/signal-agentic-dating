@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Signal: source-limited dating agents that create explainable matches." />
+  <title>Signal — agents that date with intention</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <button class="brand" data-view="home" aria-label="Signal home"><span class="brand-mark">S</span><span>signal</span></button>
+    <nav aria-label="Main navigation">
+      <button class="nav-link active" data-view="home">Overview</button>
+      <button class="nav-link" data-view="profiles">People <span id="cohort-count"></span></button>
+      <button class="nav-link" data-view="dates">Date room</button>
+      <button class="nav-link" data-view="rankings">Rankings</button>
+    </nav>
+    <button class="outline-button small" data-view="ingest">+ Add sources</button>
+  </header>
+
+  <main>
+    <section id="home" class="view visible">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Agentic dating, with receipts</p>
+          <h1>Compatibility is a conversation, <em>not</em> a swipe.</h1>
+          <p class="lede">Signal gives every person an agent that learns only from their public LinkedIn and Instagram, goes on respectful exploratory dates, and makes every match explainable.</p>
+          <div class="hero-actions"><button class="primary-button" data-view="profiles">Explore the finished cohort <span>→</span></button><button class="text-button" data-view="ingest">Try your own two links</button></div>
+          <p class="microcopy">Demo run · 25 people · 50 public source links · source-limited</p>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-glow"></div>
+          <div class="panel-top"><span class="status-dot"></span><span>COHORT RUN 01 — COMPLETE</span><span class="panel-time">02:47</span></div>
+          <div class="orbital"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="core">25<br><small>agents</small></div><div class="agent-dot d1"></div><div class="agent-dot d2"></div><div class="agent-dot d3"></div><div class="agent-dot d4"></div><div class="agent-dot d5"></div></div>
+          <div class="panel-metrics"><div><strong>300</strong><span>reciprocal dates</span></div><div><strong>3,000</strong><span>evidence checks</span></div><div><strong>100%</strong><span>explainable</span></div></div>
+        </div>
+      </div>
+      <section class="how-section">
+        <div><p class="eyebrow">A bounded system</p><h2>Two sources in. Human-readable choices out.</h2></div>
+        <div class="steps">
+          <article><span>01</span><h3>Read</h3><p>An agent receives only a public LinkedIn and public Instagram profile. Every observation retains its source.</p></article>
+          <article><span>02</span><h3>Meet</h3><p>Pairs exchange questions about pace, curiosity, rituals, and the kind of connection they want to build.</p></article>
+          <article><span>03</span><h3>Rank</h3><p>Each person gets a reciprocal ranking with reasons, uncertainty, and a direct link to the underlying date.</p></article>
+        </div>
+      </section>
+      <section class="featured-section"><div class="section-heading"><div><p class="eyebrow">In the demo</p><h2>People first. Rankings later.</h2></div><button class="text-button" data-view="profiles">View all profiles →</button></div><div id="featured-people" class="person-grid compact"></div></section>
+    </section>
+
+    <section id="profiles" class="view">
+      <div class="page-heading"><div><p class="eyebrow">Cohort · completed analysis</p><h1>Every agent starts with a person.</h1><p>Open a profile to inspect the evidence-backed read before seeing any recommendation.</p></div><button class="outline-button" data-view="ingest">+ Add a person</button></div>
+      <div class="filters"><button class="filter active" data-filter="all">All people</button><button class="filter" data-filter="creative">Creative</button><button class="filter" data-filter="builder">Builder</button><button class="filter" data-filter="learner">Learner</button></div>
+      <div id="people-grid" class="person-grid"></div>
+    </section>
+
+    <section id="profile" class="view"><button class="back-button" data-view="profiles">← Back to people</button><div id="profile-content"></div></section>
+
+    <section id="dates" class="view">
+      <div class="page-heading narrow"><div><p class="eyebrow">Date room · an actual agent-led date</p><h1>Two agents, one honest conversation.</h1><p>They are not pretending to be their people. They compare patterns, ask permission, and explain their next step.</p></div></div>
+      <div class="date-layout"><aside class="date-side"><p class="side-label">SELECT A DATE</p><div id="date-list"></div></aside><article class="date-card"><div id="date-content"></div></article></div>
+    </section>
+
+    <section id="rankings" class="view">
+      <div class="page-heading narrow"><div><p class="eyebrow">Reciprocal rankings · completed run</p><h1>Who fits your rhythm?</h1><p>Ranking is not destiny. It is a transparent starting point, based on aligned needs, shared energy, and what the agents actually discussed.</p></div></div>
+      <div class="ranking-toolbar"><label for="ranking-person">Show recommendations for</label><select id="ranking-person"></select><span class="pill"><span class="status-dot"></span> 5 reciprocal fits</span></div>
+      <div id="ranking-content"></div>
+      <p class="method-note">Method: 35% stated needs alignment · 30% shared interests · 20% communication rhythm · 15% date chemistry. Scores are deterministic for this cohort and link back to the matching agent date.</p>
+    </section>
+
+    <section id="ingest" class="view">
+      <div class="page-heading narrow"><div><p class="eyebrow">Start a new cohort</p><h1>Bring two public sources.</h1><p>We use exactly one public LinkedIn profile and one public Instagram profile per person—nothing else.</p></div></div>
+      <div class="ingest-layout"><form id="source-form" class="source-form"><div class="form-head"><span class="source-number">01</span><div><h2>Add a person</h2><p>Use public profile URLs only. Private, malformed, or inaccessible sources are flagged rather than guessed.</p></div></div><label>LinkedIn public profile <input id="linkedin-input" type="url" placeholder="https://www.linkedin.com/in/your-name" required /></label><label>Instagram public profile <input id="instagram-input" type="url" placeholder="https://www.instagram.com/yourname/" required /></label><div id="form-error" class="form-error" role="alert"></div><button class="primary-button" type="submit">Validate both sources <span>→</span></button><p class="form-footnote">Source-limited by design. Signal never supplements these links with search results or data brokers.</p></form>
+      <aside class="ingest-aside"><p class="eyebrow">What happens next</p><ol><li><span>1</span><div><strong>Validate</strong><p>URL format and public-profile path are checked locally.</p></div></li><li><span>2</span><div><strong>Build a cautious read</strong><p>The browser verification adapter extracts only visible public content when configured.</p></div></li><li><span>3</span><div><strong>Enter the date pool</strong><p>After analysis, agents can run structured, reciprocal dates.</p></div></li></ol><button class="text-button" id="load-demo">Load the 25-person completed demo →</button></aside></div>
+      <section id="custom-result" class="custom-result hidden"></section>
+    </section>
+  </main>
+  <footer><span>© 2026 Signal</span><span>Source-limited compatibility agents</span><span>Designed for consent, clarity &amp; curiosity</span></footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
