@@ -33,7 +33,7 @@ The completed sample run works on Vercel. A production version that reads visito
 - Source labels on all generated profile themes, with an explicit distinction between a visible theme and a cautious inference.
 - Date Room transcripts with reciprocal questions, an explainable decision, and a next step.
 - Deterministic top-five rankings for every person. The scoring model is 35% stated needs alignment, 30% shared interests, 20% communication rhythm, and 15% date chemistry.
-- A two-field source intake. It validates public-shaped profile URLs and creates a cautious, non-enriched profile record.
+- A two-field source intake. It checks public-shaped profile URLs and creates an explicitly unverified source record—never a fabricated profile.
 
 ## Data boundary and platform safety
 
@@ -54,7 +54,7 @@ LinkedIn prohibits automated scraping/copying of profile information, and Instag
 2. **0:20–1:00 — profile first:** Open any person from *People*. Show the LinkedIn + Instagram link chips, source-bounded themes, needs, and agent intent.
 3. **1:00–1:40 — date:** Choose *Date room*. Read the four exchanged agent messages and the explicit `CONTINUE` decision.
 4. **1:40–2:10 — rankings:** Use the ranking picker; open a ranked match and show the score, reason, and date link.
-5. **2:10–2:45 — live intake:** Click *Add sources*, paste a LinkedIn `/in/` URL and an Instagram handle URL, and show validation plus the non-enrichment safeguard.
+5. **2:10–2:45 — live intake:** Click *Add sources*, paste a LinkedIn `/in/` URL and an Instagram handle URL, and show the format check plus the authorized-access safeguard.
 6. **2:45–3:00 — close:** Reiterate that the production connector only runs with authorized access and never silently substitutes third-party data.
 
 ## Submission copy
@@ -65,4 +65,4 @@ LinkedIn prohibits automated scraping/copying of profile information, and Instag
 
 **Technical section (365 characters):**
 
-> The demo uses a Node.js static server and browser-side ES modules. It does not scrape LinkedIn or Instagram. Production ingestion is designed for authorized official APIs or user-provided licensed exports, with per-field provenance and access-control failures surfaced to the user. The local form validates only public profile URL shape and stores exactly two links.
+> The demo uses a Node.js static server and browser-side ES modules. It does not scrape LinkedIn or Instagram. Production ingestion is designed for authorized official APIs or user-provided licensed exports, with per-field provenance and access-control failures surfaced to the user. The local form checks only public profile URL shape and stores exactly two links.
